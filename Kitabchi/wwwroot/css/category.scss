@@ -1,0 +1,802 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+$arrow-bg:#FFEFF4;
+$bg:#FDF5F8;
+$book_name: #B90038;
+$stars:#FC2D72;
+$per:#FF004D;
+$disprice:#989898;
+$star:#FFCCCC;
+$red_circle:#CA5C3B;
+$blue-basket:#2D16B1;
+$load:#1D030B;
+$offer-bg:#D8F5FF;
+$clock_bg:#A6DDF0;
+$icon_bg:#434343;
+$dropdown-menu:#CCBEBE;
+$big-circle:#FFE0EB;
+ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+
+a.basket-a {
+    text-decoration: none;
+    color: white;
+    border-radius: 20px;
+    padding: 8px 16px;
+    background-color: $blue-basket;
+    font-family: 'medium';
+}
+
+a.pink-a {
+    text-decoration: none;
+    padding: 8px 16px;
+    background-color: $book_name;
+    color: white;
+    border-radius: 20px;
+}
+
+#categories{
+    padding-top: 6em;
+    padding-bottom: 2em;
+    position: relative;
+    overflow: hidden;
+    .middle-circle{
+        z-index: -1;
+        position: absolute;
+        top:  7em;
+        right: -10em;
+        width: 270px;
+        height: 270px;
+        background-color: $big-circle;
+        border-radius: 50%;
+    }
+    .big-circle{
+        position: absolute;
+        z-index: 0;
+        width: 400px;
+        height: 400px;
+        left: -14em;
+        top: 22em;
+        background-color: $big-circle;
+        border-radius: 50%;
+    }
+    .categories-content{
+        .category{ 
+            padding: 18px 12px 18px 0;
+            background-color: $offer-bg;
+            border-radius: 2em;
+            h4{
+                font-size: 24px;
+                font-family: 'semibold';
+                padding-left: 18px;
+                
+            }
+            .card{
+                border-color:$offer-bg;
+                background-color: $offer-bg;
+                border-radius: 2em;
+                .card-header{
+                    border-radius: 2em;
+                    padding-bottom: 0;
+                    padding-left: 0;
+                    background-color: $offer-bg;
+                    border-bottom-color:$offer-bg;
+                    a{
+                        text-decoration: none;
+                    }  
+                  .card-txt{ 
+                   .card-name {
+                      h5{
+                          font-size: 14px;
+                          font-family: 'medium';
+                          color: $book_name;
+                      }
+                   }
+                    .card-ico{
+                        i{
+                            transition: .3s;
+                            opacity: 0;
+                            visibility: visible;
+                            color: white;
+                            background-color: $book_name;
+                            padding: 2px 5px;
+                            border-radius: 50%;
+                        }
+                    }
+                    &:hover{
+                        i{
+                            opacity: 1;
+                            visibility: visible;
+                        }
+                    } 
+                  }
+                }
+                .card-body{
+                    padding-top: 0;
+                    padding-bottom: 0;
+                    li{
+                        padding-left: 14px;
+                        list-style: none;
+                        a{
+                            text-decoration: none;
+                            font-size: 14px;
+                            font-family: 'regular';
+                            color: #434343;
+                            transition: .2s ease-in-out;
+                            &:hover{
+                                color: $book_name;
+                            }
+                        }
+                    }
+                }
+            } 
+        }
+        .category-filter{
+            position: relative;
+            margin-top: 1.5em;
+            border-radius: 2em;
+            height: 140px;
+            padding: 15px;
+            background-color: $offer-bg;
+            .min-price,.max-price{
+                padding: 5px 15px;
+                background-color: white;
+                border-radius: 20px;
+                font-size: 13px;
+                font-family: 'semibold';
+            }
+            .min-price{
+                position: absolute;
+                bottom: 20px;
+                left: 20px;
+            }
+            .max-price{
+                position: absolute;
+                bottom: 20px;
+                right: 20px;
+            }
+           
+            h3{
+                font-size: 24px;
+                font-family: 'semibold';
+                margin-left: 12px;
+                padding-bottom: 15px;
+            }
+            input{
+                position: absolute;
+                z-index: 2;
+                height: 5px;
+                width: 89%;
+                -webkit-appearance: none;
+                pointer-events: none;
+                opacity: 0;
+                &::-webkit-slider-thumb{
+                    pointer-events: all;
+                    width: 15px;
+                    height: 15px;
+                    border-radius: 50%;
+                    border: 0 none;
+                    background-color: white;
+                    -webkit-appearance: none;
+                }
+            }
+            .category-slider{
+                position: relative;
+               
+                z-index: 1;
+                height: 3px;
+                margin: 0 15px;
+               .track{
+                 z-index: 1;   
+                position: absolute;
+                left: 0;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                border-radius: 7px;
+                background-color: white;
+               }
+               .range{
+                   position: absolute;
+                   z-index: 2;
+                   left: 25%;
+                   right: 25%;
+                   top: 0;
+                   bottom: 0;
+                   border-radius: 7px;
+                   background-color: $book_name;
+               }
+               .thumb{
+                   position: absolute;
+                   z-index: 3;
+                   width: 15px;
+                   height: 15px;
+                   background-color: white;
+                   border-radius: 50%;
+              &.left{
+                  left: 15%;
+                  transform: translate(-15px,-5px);
+              }
+              &.right{
+                  right: 15%;
+                  transform: translate(15px,-5px);
+              }
+                }
+            }
+         }
+            .category-header {
+                padding-bottom: 4em;      
+                .bestseller-header {
+                    h2 {
+                        color: $book_name;
+                        font-family: 'semibold';
+                    }
+                    span{
+                        font-size: 16px;
+                        font-family: 'regular';
+                        color: #1D030B;
+                    }
+                    .cat-btn {
+                        font-size: 12px;
+                        font-family: 'medium';
+                        background-color: $dropdown-menu;
+                        color: white;
+                        margin-left: 10px;
+                        border-radius: 20px;    
+                        border: none;
+                        outline: none;
+                    }
+                    .dropdown{
+                        .dropdown-item{
+                            font-size: 12px;
+                            font-family: 'medium';
+                        }
+                    }
+                }
+            }
+            .categories-card{
+                padding-top: 35px;
+                .category-card {
+                    margin-top: 5em;
+                    margin-bottom: 5em;
+                    .category-text {
+                        transition: .2s ease-out;
+                        border-radius: 20px;
+                        position: relative;
+                        padding: 8em 10px 20px 10px;
+        
+                        &:hover {
+                            background-color: $bg;
+                            box-shadow: #e38ab170 0px 40px 10px -10px;
+        
+                            .basket {
+                                opacity: 1;
+                                visibility: visible;
+                            }
+                        }
+        
+                        .percent {
+                            z-index: 3;
+                            position: absolute;
+                            color: white;
+                            width: 50px;
+                            height: 50px;
+                            padding: 13px 7px;
+                            background-color: $per;
+                            border-radius: 50%;
+                            top: -35%;
+                            left: 65%;
+                        }
+        
+                        a {
+                            text-decoration: none;
+                            font-size: 12px;
+                            color: white;
+                        }
+        
+                        .basket {
+                            transition: opacity .3s ease-in-out;
+                            opacity: 0;
+                            visibility: hidden;
+                        }
+                        .book-name {
+                            font-family: 'medium';
+                        }
+                        .author-name {
+                            font-family: 'regular';
+                        }
+                        
+                        .book-name,
+                        .price {
+                            color: $book_name;
+                        }
+        
+                        .dis-price,.price {
+                            font-family: 'semibold';
+                        }
+        
+                        .dis-price {
+                            color: $disprice;
+                        }
+        
+                        .category-img {
+                            position: absolute;
+                            top: -25%;
+                            left: 50%;
+                            transform: translateX(-50%);
+                        }
+        
+                        .fa-star {
+                            color: $stars;
+                            font-size: 12px;
+                        }
+        
+                        .last-i {
+                            color: $star;
+        
+                        }
+                    }
+                }
+            }
+            .load{
+                .load-pro{
+                    span{
+                        font-size: 16px;
+                        font-family: 'regular';
+                    }
+                }
+                .load-number{
+                    .active-li{
+                        background-color: $book_name;
+                    }
+                    li{
+                        text-align: right;
+                        cursor: pointer;
+                        color: white;
+                        border-radius: 50%;
+                        background-color: #CCBEBE;
+                        font-size: 16px;
+                        font-family: 'semibold';
+                        padding: 4px 13px;
+                        margin-right: 15px;
+                    }
+                }
+                .load-get{
+                    text-align: right;
+                    span{
+                        font-size: 16px;
+                        font-family: 'regular';
+                        color: #1D030B;
+                    }
+                    .cat-btn {
+                        font-size: 12px;
+                        font-family: 'medium';
+                        background-color: $dropdown-menu;
+                        color: white;
+                        margin-left: 10px;
+                        border-radius: 20px;    
+                        border: none;
+                        &:focus{
+                            box-shadow: none;
+                        }
+                    }
+                    .dropdown{
+                        .dropdown-item{
+                            font-size: 12px;
+                            font-family: 'medium';
+                        }
+                    }
+                }
+            }
+    }
+}
+        @media only screen and (max-width:1200px) and (min-width:992px) {
+        #categories{
+            .categories-card{
+                    .category-card {
+                        .category-text {
+                            padding: 8em 0px 10px 10px;
+                            .author-name{
+                                font-size: 14px;
+                            }
+                            .book-name,                  
+                            .price{
+                                font-size: 16px;
+                            }   
+                            .fa-heart{
+                                display: none;
+                            }            
+                        }
+                    }
+                }
+               }
+            }
+
+        @media only screen and (max-width:768px) {
+            #categories{
+               .categories-card{
+                    .category-card {
+                        margin-bottom: 4em;
+                        .category-text{
+                            .author-name{
+                                font-size: 14px;
+                            }
+                            .book-name,                  
+                            .price{
+                                font-size: 16px;
+                            } 
+                        }
+                    }
+               }
+               .load{
+                   .load-pro{
+                       span{
+                           font-size: 12px !important;
+                       }
+                   }
+                   .load-number{
+                       li{
+                           font-size: 12px !important;
+                           padding: 2px 12px;
+                           margin-right: 10px !important;
+                        }
+                   }
+                   .load-get{
+                       text-align: left;
+                       span{
+                           font-size: 12px !important;
+                       }
+                       .cat-btn {
+                        margin-left: 0 !important;
+                    }
+                   }
+               }
+        }
+    }
+    @media only screen and (max-width:992px){
+        #categories{
+            .category-header{
+                margin-top: 1.4em;
+                .bestseller-header{
+                    h2{
+                        font-size: 24px;
+                    }
+                }
+            }
+        }
+    }
+ // section categories end
+
+// section bestseller start
+
+#bestseller {
+    position: relative;
+    padding-bottom: 3em;
+    .big-circle{
+        position: absolute;
+        z-index: 0;
+        width: 450px;
+        height: 450px;
+        left: -14em;
+        bottom: -22em;
+        background-color: $big-circle;
+        border-radius: 50%;
+    }
+    .bestseller-inner {
+        padding-bottom: 4em;
+
+        .bestseller-header {
+            h2 {
+                color: $book_name;
+                font-family: 'semibold';
+            }
+            a {
+                font-family: medium;
+                color: $load;
+                text-decoration: underline;
+            }
+        }
+    }
+
+    .bestseller-content {
+        padding-top: 5em;
+
+        .bestseller-card {
+            .bestseller-text {
+                transition: .2s ease-out;
+                border-radius: 20px;
+                position: relative;
+                padding: 8em 20px 20px 40px;
+
+                &:hover {
+                    background-color: $bg;
+                    box-shadow: #e38ab170 0px 40px 10px -10px;
+
+                    .basket {
+                        opacity: 1;
+                        visibility: visible;
+                    }
+                }
+
+                .percent {
+                    z-index: 3;
+                    position: absolute;
+                    color: white;
+                    width: 50px;
+                    height: 50px;
+                    font-size: 14px;
+                    font-family: 'bold';
+                    padding: 15px 8px;
+                    background-color: $per;
+                    border-radius: 50%;
+                    top: -35%;
+                    left: 65%;
+                }
+
+                a {
+                    text-decoration: none;
+                    font-size: 12px;
+                    color: white;
+                }
+
+                .basket {
+                    transition: opacity .3s ease-in-out;
+                    opacity: 0;
+                    visibility: hidden;
+                }
+                .book-name {
+                    font-family: 'medium';
+                }
+                .author-name {
+                    font-family: 'regular';
+                }
+                
+                .book-name,
+                .price {
+                    color: $book_name;
+                }
+
+                .dis-price,.price {
+                    font-family: 'semibold';
+                }
+
+                .dis-price {
+                    color: $disprice;
+                }
+
+                .bestseller-img {
+                    position: absolute;
+                    top: -25%;
+                    left: 50%;
+                    transform: translateX(-50%);
+                }
+
+                .fa-star {
+                    color: $stars;
+                    font-size: 12px;
+                }
+
+                .last-i {
+                    color: $star;
+
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width:1200px) {
+    #bestseller {
+        .bestseller-inner {
+            padding: 0;
+        }
+
+        .bestseller-content {
+            padding: 0;
+
+            .bestseller-card {
+                margin-top: 9em;
+
+                .bestseller-text {
+                    padding: 8em 15px 30px 15px;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width:768px) {
+    #bestseller {
+        .bestseller-inner {
+            .bestseller-header {
+                h2 {
+                    font-size: 24px;
+                }
+            }
+        }
+
+        .bestseller-content {
+            .bestseller-card {
+                h5 {
+                    font-size: 16px;
+                }
+
+                .author-name {
+                    font-size: 12px;
+                }
+            }
+        }
+    }
+}
+// section bestseller end
+
+    // section offers start
+    #offers {
+        position: relative;
+        margin: 5em 0;
+        overflow: hidden;
+        .middle-circle{
+            z-index: -1;
+            position: absolute;
+            bottom:  0em;
+            right: -10em;
+            width: 270px;
+            height: 270px;
+            background-color: $big-circle;
+            border-radius: 50%;
+        }
+        &::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 350px;
+            background-color: $bg;
+            left: 0;
+            top: 5.5em;
+            z-index: -1;
+        }
+    
+        .offer-content {
+            .offer-book {
+                img {
+                    height: 264px;
+                    object-fit: cover;
+                }
+                p{
+                    font-family: 'regular';
+                }
+                h6 {
+                    color: $book_name;
+                    padding-top: 15px;
+                    font-family: 'semibold';
+                }
+            }
+    
+            .offer-week {
+                position: relative;
+                width: 350px;
+                padding: 60px 33px 100px 33px;
+                border-radius: 20px;
+                background-color: $offer-bg;
+                h3{
+                    font-family: 'semibold';
+                }
+                h2 {
+                    font-size: 65px;
+                    color: $book_name;
+                    font-family: 'semibold';
+                }
+    
+                .info {
+                    padding-bottom: 25px;
+                    font-size: 14px;
+                    font-family: 'regular';
+                }
+                .offer-txt{
+                    font-family: 'medium';
+                }
+                a {
+                    font-size: 14px;
+                    text-decoration: none;
+                    font-size: 'semibold';
+                }
+    
+                .clock {
+                    position: absolute;
+                    bottom: 0;
+                    right: 0;
+                    padding: 8px 0;
+                    width: 100%;
+                    background-color: $clock_bg;
+                    border-radius: 0 0 20px 20px;
+    
+                    h2 {
+                        font-family: 'semibold';
+                        font-size: 36px;
+                        color: $book_name;
+                    }
+    
+                    .clock-txt {
+                        position: absolute;
+                        top: 35px;
+                        left: 5em;
+    
+                        span {
+                            padding-right: 22px;
+                            font-size: 12px;
+                            color: #434343;
+                            font-family: 'regular';
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    @media only screen and (max-width:1200px) {
+        #offers {
+            background-color: $bg;
+            .offer-book {
+                img {
+                    height: 235px !important;
+                }
+            }
+            .offer-content {
+                padding: 25px 0;
+                .offer-week {
+                   padding: 70px 35px;
+                    width: 100%;
+                    margin: 15px 0;
+                    h2 {
+                        font-size: 45px;
+                    }
+    
+                    .info {
+                        padding-bottom: 0;
+                    }
+    
+                    a {
+                        font-size: 16px;
+                    }
+    
+                    .clock {
+                        height: 45px;
+                        h2 {
+                            font-size: 30px;
+                        }
+    
+                        .clock-txt {
+                            display: none;
+                            // left: 50%;
+                            // transform: translateX(-45%);
+    
+                            // span {
+                            //     padding-right: 16px;
+                            // }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    @media only screen and (max-width:992px){
+        #offers {
+            .middle-circle{
+                opacity: 0;
+                visibility: hidden;
+            }
+            .info{
+                font-size: 16px !important;
+            }
+        }
+    }
+    // section offers end

@@ -1,0 +1,507 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+$arrow-bg:#FFEFF4;
+$bg:#FDF5F8;
+$book_name: #B90038;
+$stars:#FC2D72;
+$per:#FF004D;
+$disprice:#989898;
+$star:#FFCCCC;
+$red_circle:#CA5C3B;
+$blue-basket:#2D16B1;
+$load:#1D030B;
+$offer-bg:#D8F5FF;
+$clock_bg:#A6DDF0;
+$icon_bg:#434343;
+$dropdown-menu:#CCBEBE;
+$big-circle:#FFE0EB;
+$middle-circle:#EDE0FF;
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+a.basket-a {
+    text-decoration: none;
+    color: white;
+    border-radius: 20px;
+    padding: 8px 16px;
+    background-color: $blue-basket;
+    font-family: 'medium';
+}
+
+a.pink-a {
+    text-decoration: none;
+    padding: 8px 16px;
+    background-color: $book_name;
+    color: white;
+    border-radius: 20px;
+}
+
+#products {
+    position: relative;
+    padding: 3em 0;
+    overflow: hidden;
+    .big-circle{
+        position: absolute;
+        z-index: -5;
+        top: 30%;
+        right: -9em;
+        width: 390px;
+        height: 390px;
+        border-radius: 50%;
+        background-color: $big-circle;
+    }
+    .products-content {
+        .pro-page {
+            color: $book_name;
+            font-size: 12px;
+            font-family: 'regular';
+            padding-bottom: 3em;
+
+            span {
+                color: black;
+            }
+        }
+
+        .pro-img {
+            position: relative;
+
+            .pro-discount {
+                width: 126px;
+                height: 126px;
+                padding: 35px 14px;
+                color: white;
+                font-size: 40px;
+                font-family: 'bold';
+                border-radius: 50%;
+                background-color: $per;
+                position: absolute;
+                top: -1em;
+                right: -1.5em;
+            }
+        }
+        .pro-info{
+            h3{
+                font-size: 48px;
+                font-family: 'semibold';
+                color: $book_name;
+            }
+            h5{
+                font-size: 30px;
+                font-family: 'semibold';
+                color: #1D030B;
+            }
+            .pro-disprice{
+                font-size: 30px;
+                font-family: 'medium';
+                color: #989898;
+            }
+           .star-comment{
+               padding-bottom: 2em;
+            .fa-star {
+                color: $stars;
+                font-size: 12px;
+            }
+            .last-i {
+                color: $star;
+            }
+            .comment{
+                padding-left: 15px;
+                color: #747474;
+                a{
+                    text-decoration: none;
+                    font-size: 16px;
+                    font-family: 'regular';
+                    color: #747474;
+                }
+            }
+           }
+           .inp-gr{
+                width: 15%;
+            .inp-frm{  
+                border-radius: 30px 0 0 30px;
+                background-color: #CCBEBE;
+                &:focus{
+                    box-shadow: none;
+                    outline-style: none;
+                    border: none;
+                }
+            }
+            
+            .btn-arrow{
+                
+                border-radius: 0 30px 30px 0;
+                color: white;
+                background-color: #CCBEBE;
+                &:focus{
+                    box-shadow: none;
+                }
+            }
+        }
+            .basket-a{
+                font-size: 16px;
+                padding: 8px 20px;
+            }
+          .pro-details{
+              padding-bottom: 2em;
+              padding-top: 2em;
+            .publish, .publish-content{
+                font-size: 16px;
+                font-family: 'regular';
+            }
+            .publish{
+                color: #1D030B;
+            }
+            .publish-content{
+                color: $book_name;
+            }
+          }
+        }
+    }
+}
+@media only screen and (max-width:992px){
+    #products{
+        .big-circle{
+            width: 300px;
+            height: 300px;
+            top: 30%;
+            right: -4em;
+        }
+        .products-content{
+             .pro-img{
+                 .pro-discount{
+                    width: 90px;
+                    height: 90px;
+                    padding: 27px 15px;
+                    color: white;
+                    font-size: 25px !important;
+                    top: -1em;
+                    right: -1.5em;
+                 }
+             }
+             .pro-info{
+                 padding-left: 25px;
+               .star-comment{
+                padding-bottom: 1em;
+               }
+                 h3{
+                     padding-top: 10px;
+                     font-size:30px;
+                 }
+                 h5{
+                     font-size: 20px;
+                 }
+                 .pro-disprice{
+                     font-size: 20px;
+                 }
+                 .pro-details{
+                     font-size: 14px;
+                     a{
+                         font-size: 14px;
+                     }
+                 }
+             }
+        }
+    }
+}
+
+@media only screen and (max-width:768px){
+    #products{    
+        .products-content{
+            .pro-info{
+                padding-left: 0;
+                .star-comment{
+                    padding-bottom: 1em;
+                }
+            }
+            .pro-details{
+                padding-top: 0;
+            }
+        }
+    }
+}
+// section products end
+
+// section book-about start
+
+#book-about{
+    position: relative;
+    .middle-circle{
+        position: absolute;
+        right: 15em;
+        top:-2.5em;
+        width: 240px;
+        height: 240px;
+        background-color: $middle-circle;
+        border-radius: 50%;
+        z-index: -6;
+    }
+    .about-content{
+        h6{
+            font-size: 24px;
+            font-family: 'semibold';
+            color: $book_name;
+            padding-bottom: 1em;
+        }
+        .about-txt{
+            p{
+                font-size: 16px;
+            }
+        }
+        .about-txt2{
+            padding-left: 4em;
+        }
+    }
+}
+@media only screen and (max-width:992px){
+    #book-about{
+        .middle-circle{
+            right: 3em;
+            top:2.8em;
+            width: 220px;
+            height: 220px;
+            background-color: $middle-circle;
+            border-radius: 50%;
+            z-index: -6;
+        }
+        .about-content{
+            .about-txt2{
+                padding-left: 0;
+            }
+        }
+    }
+}
+
+// section book-amount end
+
+// section pro-comments start
+
+#pro-comments{
+    margin: 3em 0;
+    .pro-comments-content{
+        .all-see{
+            font-size: 16px;
+            font-family: 'medium';
+            text-decoration: underline;
+            color: #1D030B;
+        }
+        h5{
+            font-size: 24px;
+            font-family: 'semibold';
+            color: $book_name;
+        }
+        .pro-comments-item{
+            position: relative;
+            padding-bottom: 2em;
+            .pro-comments-txt{
+                position: absolute;
+                top: 1.3em;
+                left: 3.7em;
+                .com-txt{
+                    font-size: 16px;
+                    font-family: 'regular';
+                }
+                .com-detail{
+                    padding-left: 5.7em;
+                    font-size: 14px;
+                    font-family: 'regular';
+                    .com-date{
+                        padding: 0 30px;
+                    }
+                    .com-icon{
+                        .fa-star{
+                            font-size: 10px;
+                            color: $stars;
+                        }
+                        .last-i{
+                            color: $star;
+                        }
+                    }
+                }
+            }
+                .com-from{
+                    padding-top: 1.5em;
+                    .fr-inp{
+                        background-color: $bg;
+                        font-size: 16px;
+                        font-family: 'medium';
+                        color: #CCBEBE;
+                        border: none;
+                        border-radius: 25px;
+                        padding: 20px;
+                    }
+                    a{
+                        font-size: 12px;
+                        font-family: 'semibold';
+                    }
+                }
+            }
+        }
+    }
+// section pro-comments end
+
+// section bestseller start
+
+#bestseller {
+    padding-bottom: 3em;
+    margin-top: 6em;
+    .bestseller-inner {
+        padding-bottom: 4em;
+
+        .bestseller-header {
+            h2 {
+                color: $book_name;
+                font-family: 'semibold';
+            }
+
+            a {
+                font-family: medium;
+                color: $load;
+                text-decoration: underline;
+            }
+        }
+    }
+
+    .bestseller-content {
+        padding-top: 5em;
+
+        .bestseller-card {
+            .bestseller-text {
+                transition: .2s ease-out;
+                border-radius: 20px;
+                position: relative;
+                padding: 8em 20px 20px 40px;
+
+                &:hover {
+                    background-color: $bg;
+                    box-shadow: #e38ab170 0px 40px 10px -10px;
+
+                    .basket {
+                        opacity: 1;
+                        visibility: visible;
+                    }
+                }
+
+                .percent {
+                    z-index: 3;
+                    position: absolute;
+                    color: white;
+                    width: 50px;
+                    height: 50px;
+                    font-size: 14px;
+                    font-family: 'bold';
+                    padding: 15px 8px;
+                    background-color: $per;
+                    border-radius: 50%;
+                    top: -35%;
+                    left: 65%;
+                }
+
+                a {
+                    text-decoration: none;
+                    font-size: 12px;
+                    color: white;
+                }
+
+                .basket {
+                    transition: opacity .3s ease-in-out;
+                    opacity: 0;
+                    visibility: hidden;
+                }
+                .book-name {
+                    font-family: 'medium';
+                }
+                .author-name {
+                    font-family: 'regular';
+                }
+                
+                .book-name,
+                .price {
+                    color: $book_name;
+                }
+
+                .dis-price,.price {
+                    font-family: 'semibold';
+                }
+
+                .dis-price {
+                    color: $disprice;
+                }
+
+                .bestseller-img {
+                    position: absolute;
+                    top: -25%;
+                    left: 50%;
+                    transform: translateX(-50%);
+                }
+
+                .fa-star {
+                    color: $stars;
+                    font-size: 12px;
+                }
+
+                .last-i {
+                    color: $star;
+
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width:1200px) {
+    #bestseller {
+        .bestseller-inner {
+            padding: 0;
+        }
+
+        .bestseller-content {
+            padding: 0;
+
+            .bestseller-card {
+                margin-top: 9em;
+
+                .bestseller-text {
+                    padding: 8em 15px 30px 15px;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width:768px) {
+    #bestseller {
+        .bestseller-inner {
+            .bestseller-header {
+                h2 {
+                    font-size: 24px;
+                }
+            }
+        }
+
+        .bestseller-content {
+            .bestseller-card {
+                h5 {
+                    font-size: 16px;
+                }
+
+                .author-name {
+                    font-size: 12px;
+                }
+            }
+        }
+    }
+}
+
+// section bestseller end

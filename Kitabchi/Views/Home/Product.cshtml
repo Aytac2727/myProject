@@ -1,0 +1,305 @@
+﻿@model Kitabchi.ViewModel.ProductVM;
+@{
+    ViewData["Title"] = "Product";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<!-- section products start -->
+<section id="products">
+    <div class="container">
+        <div class="products-content">
+            <p class="pro-page">Ana səhifə > Azərbaycan dilində kitablar > Romanlar > <span>Ağ zanbaqlar ölkəsində</span></p>
+            <div class="row justify-content-between flex-md-nowrap flex-sm-wrap">
+                <div class="col-lg-4 col-6">
+                    <div class="pro-img">
+                        <img class="img-fluid" src="@Model.Products.ImageUrl" alt="">
+                        <div class="pro-discount">@Model.Products.Discount %</div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-7 col-12">
+                    <div class="pro-info">
+                        <h3>@Model.Products.Name</h3>
+                        <h5>@Model.Products.AuthorName</h5>
+                        <div class="star-comment">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="last-i fas fa-star"></i>
+                            <span class="comment"><a href="">12 Şərh</a> | <a href="">Şərh yaz</a></span>
+                        </div>
+
+                        <span class="pro-disprice"><del>@Model.Products.Price AZN</del></span>
+                        <h3 class="pro-price">18.99 AZN</h3>
+                        <div class="pro-details">
+                            <span class="publish">Nəşriyyat: <span class="publish-content">Qanun</span></span><br>
+                            <span class="publish">Kitab kodu: <span class="publish-content">5592411</span></span><br>
+                            <span class="publish">Satışda: <span class="publish-content">Mövcuddur</span></span>
+                        </div>
+                        <div class="basket-button-group d-flex align-items-center">
+                            <div class="input-group inp-gr">
+                                <input type="text" class="form-control inp-frm" aria-label="Text input with segmented dropdown button">
+                                <div class="input-group-append d-inline">
+                                    <button type="button" class="btn btn-arrow dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    </button>
+                                    <div class="dropdown-menu">
+                                        <a class="dropdown-item" href="#">1</a>
+                                        <a class="dropdown-item" href="#">2</a>
+                                        <a class="dropdown-item" href="#">3</a>
+                                        <a class="dropdown-item" href="#">4</a>
+                                        <a class="dropdown-item" href="#">5</a>
+                                        <a class="dropdown-item" href="#">6</a>
+                                        <a class="dropdown-item" href="#">7</a>
+                                        <a class="dropdown-item" href="#">8</a>
+                                        <a class="dropdown-item" href="#">9</a>
+                                        <a class="dropdown-item" href="#">10</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="basket-buy pl-3">
+                                <a class="basket-a" href="">Səbətə at</a><br>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="big-circle"></div>
+</section>
+<!-- section products end -->
+<!-- section book-about start-->
+<section id="book-about">
+    <div class="container">
+        <div class="about-content">
+            <h6>Haqqında</h6>
+            <div class="row">
+                <div class="col-lg-5">
+                    <div class="about-txt">
+                        <p>
+                            “Ağ zanbaqlar ölkəsi” görkəmli rus ilahiyyatçısı və ictimai xadimi Qriqori Spiridonoviç Petrovun (1866-1925) ən tanınmış publisist əsəridir. Rusiyada baş verən qanlı
+                            Oktyabr inqilabından sonra mühacirətə gedən Q.Petrov bu kitabı Serbiyada çap etdirmişdi. Kitab çap olunan kimi Avropanın slavyan xalqları arasında böyük şöhrət qazanmış, təkrar-təkrar nəşr edilərək yayılmışdı. Kitabda Finlandiyanın Ru­siyaya birləşdirilməsindən sonra keçdiyi inkişaf yolu təsvir edilir. Əlbəttə, burada təsvir olunan hadisələr bütünlüklə reallığı əks etdirmir.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-5">
+                    <div class="about-txt about-txt2">
+                        <p>
+                            Lakin Q.Petrovun bu əsərində, yarıreal-yarıutopik təsvirlərlə oxucuya təqdim olunan Fin­landiya, doğrudan da, bu əsərin yazılmasına qədər və yazılmasından sonra keçdiyi inkişaf yoluyla dünyanın ən qabaqcıl və zəngin bir ölkəsinə çevrilməsiylə heyrət doğurur.
+                            1928-ci ildə türk dilinə çevrilən kitabla tanış olan Atatürk kitabı çox bəyənmiş, onun Türkiyənin məktəblərində, xüsusilə də,hərbi liseylərdə dərs vəsaiti kimi öyrədilməsi barədə əmr vermişdi.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="middle-circle"></div>
+</section>
+<!-- section book-about end -->
+<!-- pro-comments start-->
+<section id="pro-comments">
+    <div class="container">
+        <div class="pro-comments-content">
+            <div class="row justify-content-between">
+                <div class="col-lg-6">
+                    <h5>Şərhlər</h5>
+                    <div class="pro-comments-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="129.404" height="119.812" viewBox="0 0 129.404 119.812">
+                            <path id="Icon_awesome-comment-dots" data-name="Icon awesome-comment-dots" d="M54.262,2.25c29.972,0,54.262,19.734,54.262,44.088,0,10.513-4.536,20.136-12.082,27.7,2.65,10.683,11.51,20.2,11.616,20.306a1.685,1.685,0,0,1,.318,1.844,1.66,1.66,0,0,1-1.547,1.017c-14.053,0-24.588-6.74-29.8-10.895a64.644,64.644,0,0,1-22.765,4.112C24.291,90.426,0,70.693,0,46.338S24.291,2.25,54.262,2.25ZM81.394,53.121a6.783,6.783,0,1,0-6.783-6.783A6.776,6.776,0,0,0,81.394,53.121Zm-27.131,0a6.783,6.783,0,1,0-6.783-6.783A6.776,6.776,0,0,0,54.262,53.121Zm-27.131,0a6.783,6.783,0,1,0-6.783-6.783A6.776,6.776,0,0,0,27.131,53.121Z" transform="matrix(0.966, -0.259, 0.259, 0.966, -0.582, 25.915)" fill="#d8f5ff" />
+                        </svg>
+                        <div class="pro-comments-txt">
+                            <p class="com-txt">
+                                Oxunmasi meslehetli kitabdir. Finlandiya nece oldu bu gun cox yuksek
+                                inkisaf etdi sualina cavabi kitabi oxuyaraq tapa bilersiniz.
+                            </p>
+                            <p class="com-detail">
+                                <span class="com-name">Zeybullah B.</span>
+                                <span class="com-date">19.01.2020</span>
+                                <span class="com-icon">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </span>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="pro-comments-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="129.404" height="119.812" viewBox="0 0 129.404 119.812">
+                            <path id="Icon_awesome-comment-dots" data-name="Icon awesome-comment-dots" d="M54.262,2.25c29.972,0,54.262,19.734,54.262,44.088,0,10.513-4.536,20.136-12.082,27.7,2.65,10.683,11.51,20.2,11.616,20.306a1.685,1.685,0,0,1,.318,1.844,1.66,1.66,0,0,1-1.547,1.017c-14.053,0-24.588-6.74-29.8-10.895a64.644,64.644,0,0,1-22.765,4.112C24.291,90.426,0,70.693,0,46.338S24.291,2.25,54.262,2.25ZM81.394,53.121a6.783,6.783,0,1,0-6.783-6.783A6.776,6.776,0,0,0,81.394,53.121Zm-27.131,0a6.783,6.783,0,1,0-6.783-6.783A6.776,6.776,0,0,0,54.262,53.121Zm-27.131,0a6.783,6.783,0,1,0-6.783-6.783A6.776,6.776,0,0,0,27.131,53.121Z" transform="matrix(0.966, -0.259, 0.259, 0.966, -0.582, 25.915)" fill="#f6d8ff" />
+                        </svg>
+                        <div class="pro-comments-txt">
+                            <p class="com-txt">
+                                Oxuyub təsirləndiyim tək-tük kitablardandır.
+                                Hərkəsə oxumağı məsləhət bilərdim.
+                            </p>
+                            <p class="com-detail">
+                                <span class="com-name">Aynure H.</span>
+                                <span class="com-date">04.10.2019</span>
+                                <span class="com-icon">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </span>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="pro-comments-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="129.404" height="119.812" viewBox="0 0 129.404 119.812">
+                            <path id="Icon_awesome-comment-dots" data-name="Icon awesome-comment-dots" d="M54.262,2.25c29.972,0,54.262,19.734,54.262,44.088,0,10.513-4.536,20.136-12.082,27.7,2.65,10.683,11.51,20.2,11.616,20.306a1.685,1.685,0,0,1,.318,1.844,1.66,1.66,0,0,1-1.547,1.017c-14.053,0-24.588-6.74-29.8-10.895a64.644,64.644,0,0,1-22.765,4.112C24.291,90.426,0,70.693,0,46.338S24.291,2.25,54.262,2.25ZM81.394,53.121a6.783,6.783,0,1,0-6.783-6.783A6.776,6.776,0,0,0,81.394,53.121Zm-27.131,0a6.783,6.783,0,1,0-6.783-6.783A6.776,6.776,0,0,0,54.262,53.121Zm-27.131,0a6.783,6.783,0,1,0-6.783-6.783A6.776,6.776,0,0,0,27.131,53.121Z" transform="matrix(0.966, -0.259, 0.259, 0.966, -0.582, 25.915)" fill="#d8f5ff" />
+                        </svg>
+                        <div class="pro-comments-txt">
+                            <p class="com-txt">
+                                Uzun zamandır axtardığım bir neçə kitabı ancaq sizdə tapa bildim.
+                                İşlərinizdə uğurlar diləyirəm. Çox sağolun.
+                            </p>
+                            <p class="com-detail">
+                                <span class="com-name">Elxan M.</span>
+                                <span class="com-date">06.07.2019</span>
+                                <span class="com-icon">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star last-i"></i>
+                                </span>
+                            </p>
+                        </div>
+                    </div>
+                    <a class="all-see" href="">Hamısına bax</a>
+                </div>
+                <div class="col-lg-5" style="padding-top: 20px;">
+                    <h5>Şərh yaz</h5>
+                    <div class="pro-comments-item">
+                        <form action="" class="com-from">
+                            <div class="form-group">
+                                <input type="text" class="form-control fr-inp" id="formGroupExampleInput" placeholder="Ad, soyad">
+                            </div>
+                            <div class="form-group">
+                                <input type="email" class="form-control fr-inp" id="exampleFormControlInput1" placeholder="Email">
+                            </div>
+                            <div class="form-group">
+                                <textarea class="form-control fr-inp" id="exampleFormControlTextarea1" rows="7" placeholder="Mətn"></textarea>
+                            </div>
+                            <a href="" class="pink-a" type="submit">Göndər</a>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- section pro-comments end -->
+<!-- section sought-for start-->
+<section id="bestseller">
+    <div class="container">
+        <div class="bestseller-inner">
+            <div class="row justify-content-between align-items-center flex-nowrap">
+                <div class="col-lg-4">
+                    <div class="bestseller-header">
+                        <h2>Digər romanlarımız</h2>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="bestseller-header text-right">
+                        <a href="">Hamısına bax</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="bestseller-content">
+            <div class="row">
+                <div class="col-lg-3 col-6 col-md-4">
+                    <div class="bestseller-card">
+                        <div class="bestseller-text">
+                            <div class="bestseller-img">
+                                <img src="~/home_image/boyukumidler.png" alt="">
+                            </div>
+                            <h5 class="book-name">Böyük ümidlər</h5>
+                            <p class="author-name">Charles Dickens</p>
+                            <h5 class="price">11.99 AZN</h5>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="last-i fas fa-star"></i>
+                            <br><br>
+                            <a class="basket-a" href="">Səbətə at</a>
+                            <a class="basket pink-a" href="">Ətraflı</a>
+                            <i class="last-i fas fa-heart"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-6 col-md-4">
+                    <div class="bestseller-card">
+                        <div class="bestseller-text">
+                            <div class="bestseller-img">
+                                <img src="~/home_image/varliveheclik.png" alt="">
+                            </div>
+                            <h5 class="book-name">Varlıq və heçlik</h5>
+                            <p class="author-name">Jean-Paul Sartre</p>
+                            <h5 class="price">20.99 AZN</h5>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="last-i fas fa-star"></i>
+                            <br><br>
+                            <a class="basket-a" href="">Səbətə at</a>
+                            <a class="basket pink-a" href="">Ətraflı</a>
+                            <i class="last-i fas fa-heart"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-6 col-md-4">
+                    <div class="bestseller-card">
+                        <div class="bestseller-text">
+                            <div class="bestseller-img">
+                                <img src="~/home_image/anlatsenseversin.png" alt="">
+                            </div>
+                            <h5 class="book-name">Anlat Sen Seversin Yalanı</h5>
+                            <p class="author-name">Tuba Ezici</p>
+                            <h5 class="price">15.49 AZN</h5>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="last-i fas fa-star"></i>
+                            <br><br>
+                            <a class="basket-a" href="">Səbətə at</a>
+                            <a class="basket pink-a" href="">Ətraflı</a>
+                            <i class="last-i fas fa-heart"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-6 col-md-4">
+                    <div class="bestseller-card">
+                        <div class="bestseller-text">
+                            <div class="bestseller-img">
+                                <img src="~/home_image/giveofstars.png" alt="">
+                            </div>
+                            <h5 class="book-name">The Giver Of Stars</h5>
+                            <p class="author-name">Jojo Mayes</p>
+                            <h5 class="price">13.50 AZN</h5>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="last-i fas fa-star"></i>
+                            <br><br>
+                            <a class="basket-a" href="">Səbətə at</a>
+                            <a class="basket pink-a" href="">Ətraflı</a>
+                            <i class="last-i fas fa-heart"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- section sought-for end -->

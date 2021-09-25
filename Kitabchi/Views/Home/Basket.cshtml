@@ -1,0 +1,368 @@
+﻿
+@{
+    ViewData["Title"] = "Basket";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<!-- section basket start -->
+<section id="basket">
+    <div class="container">
+        <div class="basket-content">
+            <p class="home-page-txt"><span>Ana səhifə</span> > Səbətdə olanlar</p>
+            <h4>Səbətdə olanlar</h4>
+            <div class="row align-items-center">
+                <div class="col-lg-8">
+                    <table class="table table-responsive" id="table-checkout">
+                        <thead>
+                        <th></th>
+                        <th>Məhsul haqqında</th>
+                        <th>Məhsulun kodu</th>
+                        <th>Miqdar</th>
+                        <th>Qiymət</th>
+                        <th>Məbləğ</th>
+                        </thead>
+                        <tbody class="t-body">
+                            <tr class="tbl-tr">
+                                <td width="10%"><i class="fas fa-times"></i></td>
+                                <td width="35%">
+                                    <div class="pro-info d-flex align-items-center">
+                                        <div class="pro-img pr-2">
+                                            <img src="~/basket_image/12illik.png" alt="">
+                                        </div>
+                                        <div class="pro-txt pt-3">
+                                            <h6>12 illik köləlik</h6>
+                                            <p>Solomon Northup</p>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td width="20%">
+                                    <p class="pro-code">#5563321</p>
+                                </td>
+                                <td class="pro-count" width="25%">
+                                    <input type="text" list="cars" class="frm-cont" />
+                                    <datalist id="cars">
+                                        <option>Volvo</option>
+                                        <option>Saab</option>
+                                        <option>Mercedes</option>
+                                        <option>Audi</option>
+                                    </datalist>
+                                </td>
+                                <td>
+                                    <p class="pro-price">10.55 AZN</p>
+                                </td>
+                                <td>
+                                    <p class="pro-all">21.10 AZN</p>
+                                </td>
+                            </tr>
+                            <tr class="tbl-tr">
+                                <td width="10%"><i class="fas fa-times"></i></td>
+                                <td width="35%">
+                                    <div class="pro-info d-flex align-items-center">
+                                        <div class="pro-img pr-2">
+                                            <img src="~/basket_image/melale.png" alt="">
+                                        </div>
+                                        <div class="pro-txt pt-3">
+                                            <h6>Əlində kitab olan qız</h6>
+                                            <p>Malala Yusəfzay</p>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td width="20%">
+                                    <p class="pro-code">#3157991</p>
+                                </td>
+                                <td class="pro-count" width="25%">
+                                    <input type="text" list="cars" class="frm-cont" />
+                                    <datalist id="cars">
+                                        <option>Volvo</option>
+                                        <option>Saab</option>
+                                        <option>Mercedes</option>
+                                        <option>Audi</option>
+                                    </datalist>
+                                </td>
+                                <td>
+                                    <p class="pro-price">3.50 AZN</p>
+                                </td>
+                                <td>
+                                    <p class="pro-all">3.50 AZN</p>
+                                </td>
+                            </tr>
+                            <tr class="tbl-tr">
+                                <td width="10%"><i class="fas fa-times"></i></td>
+                                <td width="35%">
+                                    <div class="pro-info d-flex align-items-center">
+                                        <div class="pro-img pr-2">
+                                            <img src="~/basket_image/zanbaqlar.png" alt="">
+                                        </div>
+                                        <div class="pro-txt pt-3">
+                                            <h6>Ağ zanbaqlar ölkəsində</h6>
+                                            <p>Qriqori Petrov</p>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td width="20%">
+                                    <p class="pro-code">#3157991</p>
+                                </td>
+                                <td class="pro-count" width="25%">
+                                    <input type="text" list="cars" class="frm-cont" />
+                                    <datalist id="cars">
+                                        <option>Volvo</option>
+                                        <option>Saab</option>
+                                        <option>Mercedes</option>
+                                        <option>Audi</option>
+                                    </datalist>
+                                </td>
+                                <td>
+                                    <p class="pro-price">3.50 AZN</p>
+                                </td>
+                                <td>
+                                    <p class="pro-all">3.50 AZN</p>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <!-- <div class="basket-item">
+                                <div class="row align-items-center flex-nowrap">
+                                  <div class="col-lg-1">
+                                    <div class="item">
+                                      <i class="fas fa-times"></i>
+                                    </div>
+                                  </div>
+                                  <div class="col-lg-3">
+                                    <div class="item d-flex justify-content-between align-items-center">
+                                      <div class="item-1">
+                                      <img class="img-fluid" src="~/basket_image/12illik.png" alt="">
+                                      </div>
+                                      <div class="item-2">
+                                        <h6>12 illik kolelik</h6>
+                                      <p>Solomon</p>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div class="col-lg-2">
+                                    <div class="item">
+                                      <p>#5563321</p>
+                                    </div>
+                                  </div>
+                                  <div class="col-lg-2">
+                                    <div class="item">
+                                      <div class="input-group inp-gr">
+                                        <input type="text" class="form-control inp-frm" aria-label="Text input with segmented dropdown button">
+                                        <div class="input-group-append">
+                                          <button type="button" class="btn btn-arrow dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                          </button>
+                                          <div class="dropdown-menu">
+                                            <a class="dropdown-item" href="#">1</a>
+                                            <a class="dropdown-item" href="#">2</a>
+                                            <a class="dropdown-item" href="#">3</a>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div class="col-lg-2">
+                                    <div class="item">
+                                      <p class="bas-price">10.55 AZN</p>
+                                    </div>
+                                  </div>
+                                  <div class="col-lg-2">
+                                    <div class="item">
+                                      <p class="all-price">21.10 AZN</p>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div> -->
+                </div>
+                <div class="col-lg-4">
+                    <div class="basket-buy-pro">
+                        <h4>Sifarişi tamamla</h4>
+                        <span class="pro-txt">Ümumi məhsul sayı</span> <span class="pro-count">3</span>
+                        <br><span class="pro-txt">Ümumi məbləğ</span> <span class="pro-count pro-count2">30.5 AZN</span>
+                        <div class="input-group mb-3 inp-group">
+                            <input type="text" class="form-control inp-try" placeholder="Promo kod varmı?"
+                                   aria-label="Recipient's username" aria-describedby="basic-addon2">
+                            <div class="input-group-append inp-try">
+                                <button class="btn-try btn" type="button">Yoxla</button>
+                            </div>
+                        </div>
+                        <button style="width: 100%;" class="btn-cash">Ödəniş et</button>
+                        <div class="buy-load">
+                            <a href="#">Alışa davam et</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="big-circle"></div>
+</section>
+<!-- section basket end -->
+<!-- section offers start -->
+<section id="offers">
+    <div class="container">
+        <div class="offer-content">
+            <div class="row justify-content-sm-center align-items-center">
+                <div class="col-lg-2 col-6">
+                    <div class="offer-book text-center">
+                        <img class="img-fluid" src="~/home_image/yol.png" alt="">
+                        <h6>Yol</h6>
+                        <p>Nəcib Məhfuz</p>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-6">
+                    <div class="offer-book text-center">
+                        <img class="img-fluid" src="~/home_image/daniel.png" alt="">
+                        <h6>Elcornon üçün çiçəklər</h6>
+                        <p>Daniel Kayes</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-sm-12">
+                    <div class="offer-week text-center">
+                        <h3>Həftənin təklifi</h3>
+                        <p class="offer-txt">Seçilmiş 4 kitab üçün əla təklif</p>
+                        <h2>29.99<sup>₼</sup></h2>
+                        <p class="info">
+                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Suscipit nisi tempora maiores
+                            consequuntur aspernatur possimus.
+                        </p>
+                        <a class="pink-a" href="">Sifariş et</a>
+                        <div class="clock">
+                            <h2>04:23:40:29</h2>
+                            <div class="clock-txt">
+                                <span>gün</span>
+                                <span>saat</span>
+                                <span>dəqiqə</span>
+                                <span>saniyə</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-6">
+                    <div class="offer-book text-center">
+                        <img class="img-fluid" src="~/home_image/anneannem.png" alt="">
+                        <h6>Yol</h6>
+                        <p>Nəcib Məhfuz</p>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-6">
+                    <div class="offer-book text-center">
+                        <img class="img-fluid" src="~/home_image/hekayeler.png" alt="">
+                        <h6>Yol</h6>
+                        <p>Nəcib Məhfuz</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="middle-circle"></div>
+</section>
+<!-- section offers end -->
+<!-- section sought-for start-->
+<section id="bestseller">
+    <div class="container">
+        <div class="bestseller-inner">
+            <div class="row justify-content-between align-items-center flex-nowrap">
+                <div class="col-lg-4">
+                    <div class="bestseller-header">
+                        <h2>Çox axtarılanlar</h2>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="bestseller-header text-right">
+                        <a href="">Hamısına bax</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="bestseller-content">
+            <div class="row">
+                <div class="col-lg-3 col-6 col-md-4">
+                    <div class="bestseller-card">
+                        <div class="bestseller-text">
+                            <div class="bestseller-img">
+                                <img src="~/home_image/boyukumidler.png" alt="">
+                            </div>
+                            <h5 class="book-name">Böyük ümidlər</h5>
+                            <p class="author-name">Charles Dickens</p>
+                            <h5 class="price">11.99 AZN</h5>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="last-i fas fa-star"></i>
+                            <br><br>
+                            <a class="basket-a" href="">Səbətə at</a>
+                            <a class="basket pink-a" href="">Ətraflı</a>
+                            <i class="last-i fas fa-heart"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-6 col-md-4">
+                    <div class="bestseller-card">
+                        <div class="bestseller-text">
+                            <div class="bestseller-img">
+                                <img src="~/home_image/varliveheclik.png" alt="">
+                            </div>
+                            <h5 class="book-name">Varlıq və heçlik</h5>
+                            <p class="author-name">Jean-Paul Sartre</p>
+                            <h5 class="price">20.99 AZN</h5>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="last-i fas fa-star"></i>
+                            <br><br>
+                            <a class="basket-a" href="">Səbətə at</a>
+                            <a class="basket pink-a" href="">Ətraflı</a>
+                            <i class="last-i fas fa-heart"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-6 col-md-4">
+                    <div class="bestseller-card">
+                        <div class="bestseller-text">
+                            <div class="bestseller-img">
+                                <img src="~/home_image/anlatsenseversin.png" alt="">
+                            </div>
+                            <h5 class="book-name">Anlat Sen Seversin Yalanı</h5>
+                            <p class="author-name">Tuba Ezici</p>
+                            <h5 class="price">15.49 AZN</h5>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="last-i fas fa-star"></i>
+                            <br><br>
+                            <a class="basket-a" href="">Səbətə at</a>
+                            <a class="basket pink-a" href="">Ətraflı</a>
+                            <i class="last-i fas fa-heart"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-6 col-md-4">
+                    <div class="bestseller-card">
+                        <div class="bestseller-text">
+                            <div class="bestseller-img">
+                                <img src="~/home_image/giveofstars.png" alt="">
+                            </div>
+                            <h5 class="book-name">The Giver Of Stars</h5>
+                            <p class="author-name">Jojo Mayes</p>
+                            <h5 class="price">13.50 AZN</h5>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="last-i fas fa-star"></i>
+                            <br><br>
+                            <a class="basket-a" href="">Səbətə at</a>
+                            <a class="basket pink-a" href="">Ətraflı</a>
+                            <i class="last-i fas fa-heart"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- section sought-for end -->

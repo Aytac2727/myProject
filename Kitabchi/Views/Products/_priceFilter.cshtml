@@ -1,0 +1,125 @@
+﻿@model ProductWithCategoryVM
+
+@*@{
+        int priceRangeMin = 0;
+        int priceRangeMax = (int)Math.Round(Model.MaxPrice / 100);
+        if (priceRangeMax == 0)
+        {
+            priceRangeMax = 1;
+        }
+        priceRangeMax = (int)(priceRangeMax * 100);
+
+        var priceStartFrom = Model.PriceFrom.HasValue ? Model.PriceFrom.Value : priceRangeMin;
+        var priceStartTo = Model.PriceTo.HasValue && Model.PriceTo.Value <= priceRangeMax ? Model.PriceTo.Value : priceRangeMax;
+    }
+
+    <div class="filter-widget">
+        <h4 class="fw-title">Qiymət filteri</h4>
+        <div class="px-2">
+            <div class="filter-range-wrap">
+                <div class="range-slider">
+                    <div class="price-input">
+                        <input type="text" id="minamount" value="@priceRangeMin" disabled="disabled">
+                        <input type="text" id="maxamount" value="@priceRangeMax" disabled="disabled">
+                    </div>
+                </div>
+                <div class="price-range ui-slider ui-corner-all ui-slider-horizontal ui-widget ui-widget-content"
+                     data-min="0" data-max="100">
+                    <div class="ui-slider-range ui-corner-all ui-widget-header"></div>
+                    <span tabindex="0" class="ui-slider-handle ui-corner-all ui-state-default"></span>
+                    <span tabindex="0" class="ui-slider-handle ui-corner-all ui-state-default"></span>
+                </div>
+            </div>
+            <form id="priceRangeForm" method="post" action="">
+                <input type="hidden" name="from" value="@(priceStartFrom > priceRangeMin ? string.Format("{0}", priceStartFrom) : "")" @(priceStartFrom > priceRangeMin ? string.Empty : "disabled=disabled")>
+                <input type="hidden" name="to" value="@(priceStartTo < priceRangeMax ? string.Format("{0}", priceStartTo) : "")" @(priceStartTo < priceRangeMax ? string.Empty : "disabled=disabled")>
+                <button type="submit" class="filter-btn">Search</button>
+                <a href="/Products/Index" class="filter-btn">Reset</a>
+            </form>
+        </div>
+    </div>
+    @section scripts{
+        <script>
+            var rangeSlider = $(".price-range"),
+                minamount = $("#minamount"),
+                maxamount = $("#maxamount");
+
+            $(document).ready(function () {
+                rangeSlider.slider({
+                    range: true,
+                    min: @(priceRangeMin),
+                    max: @(priceRangeMax),
+                    values: [@(priceStartFrom), @(priceStartTo)],
+                    slide: function (event, ui) {
+                        var minVal = ui.values[0];
+                        minamount.val(minVal);
+
+                        if (minVal > @(priceRangeMin)) {
+                            $("[name=from]").val(minVal);
+                            $("[name=from]").removeAttr("disabled");
+                        } else {
+                            $("[name=from]").val("");
+                            $("[name=from]").attr("disabled", "disabled");
+                        }
+
+                        var maxVal = ui.values[1];
+                        maxamount.val(maxVal);
+
+                        if (maxVal < @(priceRangeMax)) {
+                            $("[name=to]").val(maxVal);
+                            $("[name=to]").removeAttr("disabled");
+                        } else {
+                            $("[name=to]").val("");
+                            $("[name=to]").attr("disabled", "disabled");
+                        }
+                    }
+                });
+
+                minamount.val(@Html.Raw("rangeSlider.slider(\"values\", 0)"));
+                maxamount.val(@Html.Raw("rangeSlider.slider(\"values\", 1)"));
+            });
+
+            $("#priceRangeForm").submit(function (e) {
+                Search();
+
+                e.preventDefault();
+            });
+        </script>
+
+    }*@
+
+<div class="row">
+    @if (Model.Products != null && Model.Products.Count > 0)
+    {
+        @foreach (var product in Model.Products)
+        {
+            <div class="col-lg-4 col-6 col-md-4">
+                <div class="category-card">
+                    <div class="category-text">
+                        <div class="category-img">
+                            <img src="~/Uploads/@product.ImageUrl" alt="">
+                        </div>
+                        <h5 class="book-name">@product.Name</h5>
+                        <p class="author-name">@product.AuthorName</p>
+                        <h5 class="price">@product.Price AZN</h5>
+
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="last-i fas fa-star"></i>
+                        <br><br>
+                        <a class="basket-a" href="">Səbətə at</a>
+                        <a class="basket pink-a" href="">Ətraflı</a>
+                        <i class="last-i fas fa-heart"></i>
+                    </div>
+                </div>
+            </div>
+
+        }
+
+    }
+    else
+    {
+        <p class="my-4 w-100 alert alert-danger">Məhsul tapılmadı...  </p>}
+</div>

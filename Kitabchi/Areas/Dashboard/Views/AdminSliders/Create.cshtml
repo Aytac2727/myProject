@@ -1,0 +1,108 @@
+﻿@model Kitabchi.Models.Slider
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Areas/Dashboard/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h1>Create</h1>
+
+<h4>Slider</h4>
+<hr />
+<div class="row">
+    <div class="col-md-10">
+        <form id="ProductForm" asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Description1" class="control-label"></label>
+                <input asp-for="Description1" class="form-control" />
+                <span asp-validation-for="Description1" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Description2" class="control-label"></label>
+                <input asp-for="Description2" class="form-control" />
+                <span asp-validation-for="Description2" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SliderToImages" class="control-label"></label>
+                <input id="productPicture" asp-for="SliderToImages" multiple type="file" class="form-control" />
+                <input type="hidden" name="SliderPicture" id="pictureIDs" />
+                <div id="pictureArea" class="d-flex flex-wrap"></div>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+<div id="imageTemplate" style="display:none; height:25px;">
+    <div class="thisImage col-md-3">
+        <div class="card mt-4">
+            <div class="uPicHolder card-body text-center">
+                <img class="image img-thumbnail" src="" />
+            </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">
+                    <input type="radio" name="ThumbNailPicture" class="mr-1" value="" />
+                    <label class="imageInputLabel">Set Cover</label>
+                </li>
+            </ul>
+            <div class="card-footer">
+                <button type="button" class="btn btn-danger" onclick="removeImage(this)"><i class="fas fa-times mr-1"></i>Remove Image</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section AdminScripts{
+    <script>
+        $("#productPicture").change(function () {
+            var pictures = this.files;
+            var picsData = new FormData();
+            for (var i = 0; i < pictures.length; i++) {
+                picsData.append("Pictures", pictures[i]);
+            }
+            $.ajax({
+                url: "/Shared/UploadPicture",
+                dataType: "JSON",
+                method: "Post",
+                data: picsData,
+                processData: false,
+                contentType: false
+            }).done(function (res) {
+                for (var i = 0; i < res.data.length; i++) {
+                    var picResponse = res.data[i];
+                    AttachNewImage(picResponse.pictureURL, picResponse.id)
+                }
+
+            })
+        })
+
+        function AttachNewImage(imageUrl, imageID) {
+            var $newimgHTML = $("#imageTemplate").clone();
+            $newimgHTML.find(".image").attr("src", "/uploads/" + imageUrl);
+            $newimgHTML.find(".image").attr("data-id", imageID);
+            $newimgHTML.find("input[name=ThumbnailPicture]").val(imageID);
+            $newimgHTML.find("input[name=ThumbnailPicture]").attr("id", "r" + imageID);
+            $newimgHTML.find(".imageInputLabel").attr("for", "r" + imageID);
+            $("#pictureArea").append($newimgHTML.html());
+        }
+        function removeImage(btn) {
+            $(btn).parents(".thisImage").remove()
+        }
+
+        $("#ProductForm").on("submit", function () {
+           let productIds = [];
+            $("#pictureArea .image").each(function () {
+             var imageID = $(this).attr("data-id")
+                productIds.push(imageID)
+            })
+            $("#pictureIDs").val(productIds.join());
+
+        });
+    </script>
+}
+
